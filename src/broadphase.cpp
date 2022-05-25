@@ -1,4 +1,5 @@
 #include "broadphase.hpp"
+#include<iostream>
 
 namespace Physicc::Broadphase
 {
@@ -71,3 +72,4 @@ namespace Physicc::Broadphase
 		return getPotentialContacts(bvh.getHeadNode());
 	}
 }
+

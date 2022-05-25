@@ -23,14 +23,14 @@ namespace Physicc
 		public:
 			BVH(std::vector<RigidBody> rigidBodyList);
 
-            inline void buildTree();
-            
+            void buildTree();
+
 			BVHNode* getHeadNode()
 			{
 				return m_head;
 			}
 			
-			private:
+		private:
 			BVHNode* m_head;
 			std::vector<RigidBody> m_rigidBodyList;
 

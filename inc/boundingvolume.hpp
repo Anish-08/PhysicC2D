@@ -3,7 +3,7 @@
 
 #include "glm/glm.hpp"
 #include "glm/gtc/epsilon.hpp"
-
+#include <iostream>
 
 namespace Physicc
 {
@@ -15,8 +15,9 @@ namespace Physicc
             AABB() = default; // This is needed so that compiler will for sure create the default constructor
 
             
-            // another weird constructor which I don't understand yet
-
+            AABB(const glm::vec3& lb, const glm::vec3& ub) : lowerBound(lb), upperBound(ub)
+			{
+			}
 
             //The two variables in this structure
             glm::vec3 lowerBound;
@@ -53,6 +54,10 @@ namespace Physicc
                 m_volume = {lowerBound,upperBound} ;
             }
 
+            inline void printit()
+            {
+                std::cout<<"("<<m_volume.lowerBound.x<<","<<m_volume.lowerBound.y<<" ; "<<m_volume.upperBound.x<<","<<m_volume.upperBound.y<<")";
+            }
             inline float getVolume() const
             {
                 return (m_volume.upperBound.x - m_volume.lowerBound.x) 

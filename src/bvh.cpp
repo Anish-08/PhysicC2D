@@ -1,14 +1,20 @@
 #include "bvh.hpp"
+#include <vector>
+#include <iostream>
 
 namespace Physicc
 {
 
-    //some code  to get rigid body list
-
+    
+    BVH::BVH(std::vector<RigidBody> rigidBodyList)
+		: m_rigidBodyList(std::move(rigidBodyList)) 
+	{
+        auto m_head = new BVHNode;
+	}
 
     BoundingVolume::AABB BVH::computeBV(std::size_t start, std::size_t end)
     {
-        BoundingVolume::AABB bv(m_rigidBodyList[start].getAABB());
+        BoundingVolume::AABB bv{m_rigidBodyList[start].getAABB()};
 
         for(std::size_t i = start+1 ; i<= end ; i++ )
         {
@@ -24,9 +30,11 @@ namespace Physicc
     }
 
 
-    inline void BVH::buildTree()
+    void BVH::buildTree()
 	{
-		buildTree(m_head, 0, m_rigidBodyList.size() - 1);
+        BVHNode* new_m_head = new BVHNode;
+        m_head = new_m_head;
+		buildTree(new_m_head, 0, m_rigidBodyList.size() - 1);
 	}
 
     void BVH::buildTree (BVHNode* node, std::size_t start, std::size_t end )
@@ -41,20 +49,21 @@ namespace Physicc
         
         else
 		{
-			node->volume = BoundingVolume::AABB(computeBV(start, end));
-
+            
+            BoundingVolume::AABB sample;
+			sample = computeBV(start, end);
+            
+            node->volume = sample ;
+            std::cout<<node->volume.getVolume()<<'\n';
 			auto leftNode = new BVHNode;
 			auto rightNode = new BVHNode;
-
 			node->left = leftNode;
 			node->right = rightNode;
-
 			leftNode->parent = node;
 			rightNode->parent = node;
 
             std::size_t sz ;
             sz = BuildingLogic(start,end) ;
-
 			buildTree(leftNode, start, sz);
 			buildTree(rightNode, sz+1, end);
 		}

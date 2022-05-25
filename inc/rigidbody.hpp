@@ -16,6 +16,11 @@ namespace Physicc
             return m_volume;
         }
 
+        void SetThisVolume (glm::vec3 lb , glm::vec3 ub)
+        {
+            m_volume.setVolume(lb,ub) ;
+        }
+
         private:
         BoundingVolume::AABB m_volume;
     };

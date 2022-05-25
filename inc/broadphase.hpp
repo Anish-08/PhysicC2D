@@ -5,6 +5,7 @@
 #include "rigidbody.hpp"
 #include "bvh.hpp"
 #include <vector>
+#include <iostream>
 
 namespace Physicc::Broadphase
 {
@@ -14,14 +15,23 @@ namespace Physicc::Broadphase
 		: rb1(body1), rb2(body2)
 		{
 		}
-        //Proper constructor not present ?
 
 		RigidBody* rb1; 
         RigidBody* rb2;
 
+
+        void printcontact()
+        {
+            std::cout<<"{ ";
+            rb1->getAABB().printit();
+            std::cout<<" ";
+	        rb2->getAABB().printit();
+            std::cout<<" }"<<'\n';
+        }
     };
 
     std::vector<PotentialContact> getPotentialContacts(BVHNode* node);
+    std::vector<PotentialContact> getPotentialContacts(BVH bvh);
 }
 
 
