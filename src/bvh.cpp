@@ -54,7 +54,7 @@ namespace Physicc
 			sample = computeBV(start, end);
             
             node->volume = sample ;
-            std::cout<<node->volume.getVolume()<<'\n';
+            // std::cout<<node->volume.getVolume()<<'\n';
 			auto leftNode = new BVHNode;
 			auto rightNode = new BVHNode;
 			node->left = leftNode;

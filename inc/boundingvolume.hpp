@@ -78,7 +78,15 @@ namespace Physicc
                 glm::vec3 maxvec = glm::max(m_volume.upperBound,bv.m_volume.upperBound);
                 return {minvec,maxvec};
             }
-        
+
+            inline bool IsGreater(const BoxBV bv) const
+            {
+                if((m_volume.lowerBound.x+m_volume.upperBound.x)!= (bv.m_volume.lowerBound.x+bv.m_volume.upperBound.x))
+                {
+                    return (m_volume.lowerBound.x+m_volume.upperBound.x)> (bv.m_volume.lowerBound.x+bv.m_volume.upperBound.x);
+                }
+                else return (m_volume.lowerBound.y+m_volume.upperBound.y)> (bv.m_volume.lowerBound.y+bv.m_volume.upperBound.y);
+            }
 
             private:
 
