@@ -33,7 +33,7 @@ int main()
 	{
 		variable[i].printcontact();
 	}
-	std::cout<<"Collision Detection Completed";
+	std::cout<<"Yeah it worked";
 	
 	return 0;
 }
