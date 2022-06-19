@@ -11,7 +11,7 @@ namespace Physicc
         public:
 
 
-        BoundingVolume::AABB getAABB()
+        BoundingVolume::AABB getAABB() const
         {
             return m_volume;
         }

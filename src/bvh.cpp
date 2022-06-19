@@ -1,6 +1,7 @@
 #include "bvh.hpp"
 #include <vector>
 #include <iostream>
+#include "BuildLogics.hpp"
 
 namespace Physicc
 {
@@ -26,6 +27,7 @@ namespace Physicc
 
     std::size_t BVH::BuildingLogic(std::size_t start, std::size_t end) 
     {
+        Method1::sorter(m_rigidBodyList,start,end);
         return (start+end)/2; 
     }
 

@@ -11,13 +11,13 @@ namespace Physicc
     {
         // Sorting using custom 
         struct {
-        bool operator()(const RigidBody& a,const RigidBody& b) const { return a.getAABB().isGreater(b.getAABB()); }
+        bool operator()(const RigidBody& a,const RigidBody& b) const { return a.getAABB().IsGreater(b.getAABB()); }
         } customGreaterThan;
 
-        void sorter(std::vector<RigidBody>& m_rigidBodyList)
+        void sorter(std::vector<RigidBody>& m_rigidBodyList, std::size_t start, std::size_t end)
         {
-            std::sort(std::next(m_rigidBodyList.begin(), 0),
-			          std::next(m_rigidBodyList.begin(), m_rigidBodyList.size), customGreaterThan);
+            std::sort(std::next(m_rigidBodyList.begin(), start),
+			          std::next(m_rigidBodyList.begin(), end), customGreaterThan);
         }
     }
 }

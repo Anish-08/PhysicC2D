@@ -3,7 +3,6 @@
 #include <vector>
 #include "bvh.hpp"
 #include "broadphase.hpp"
-#include "BuildLogics.hpp"
 
 int main()
 { 
@@ -34,7 +33,7 @@ int main()
 	{
 		variable[i].printcontact();
 	}
-	std::cout<<"Yeah it worked";
+	std::cout<<"Collision Detection Completed";
 	
 	return 0;
 }
