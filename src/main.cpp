@@ -6,6 +6,8 @@
 
 int main()
 { 
+	//Test cases
+	/*
 	Physicc::RigidBody a1,a2,a3,a4; 
 	glm::vec3 v1{0,0,0}, v10{8,4,0} , v2{3,8,0}, v20{8,10,0} , v3{5,3,0}, v30{7,9,0},v4{10,2,0},v40{14,4,0};
 	
@@ -34,6 +36,7 @@ int main()
 		variable[i].printcontact();
 	}
 	std::cout<<"Yeah it worked";
-	
+	*/
+
 	return 0;
 }
