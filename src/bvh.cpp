@@ -27,7 +27,7 @@ namespace Physicc
 
     std::size_t BVH::BuildingLogic(std::size_t start, std::size_t end) 
     {
-        Method1::sorter(m_rigidBodyList,start,end);
+        //Method1::sorter(m_rigidBodyList,start,end);
         return (start+end)/2; 
     }
 

@@ -20,14 +20,14 @@ namespace Physicc::Broadphase
         RigidBody* rb2;
 
 
-        void printcontact()
+        /*void printcontact()
         {
             std::cout<<"{ ";
             rb1->getAABB().printit();
             std::cout<<" ";
 	        rb2->getAABB().printit();
             std::cout<<" }"<<'\n';
-        }
+        }*/
     };
 
     std::vector<PotentialContact> getPotentialContacts(BVHNode* node);
