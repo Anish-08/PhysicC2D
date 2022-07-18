@@ -3,6 +3,7 @@
 #include <vector>
 #include "bvh.hpp"
 #include "broadphase.hpp"
+#include "testcases.hpp"
 
 int main()
 { 
@@ -21,12 +22,14 @@ int main()
 	mylist.push_back(a2);
 	mylist.push_back(a3);
 	mylist.push_back(a4);
-	
-	// Physicc::Method1::sorter(&mylist);
-
+	*/
+	int x;
+	x = 500;
+	std::vector<Physicc::RigidBody> mylist = testcases(x);
 	Physicc::BVH mybvh{mylist};
 	mybvh.buildTree();
 	
+
 	std::vector<Physicc::Broadphase::PotentialContact> variable;
 	variable = Physicc::Broadphase::getPotentialContacts(mybvh);
 	int n = variable.size();
@@ -36,7 +39,6 @@ int main()
 		variable[i].printcontact();
 	}
 	std::cout<<"Yeah it worked";
-	*/
 
 	return 0;
 }
