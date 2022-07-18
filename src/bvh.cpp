@@ -1,7 +1,6 @@
 #include "bvh.hpp"
 #include <vector>
 #include <iostream>
-#include "BuildLogics.hpp"
 
 namespace Physicc
 {
