@@ -1,4 +1,5 @@
 #include "bvh.hpp"
+#include "BuildLogics.hpp"
 #include <vector>
 #include <iostream>
 
